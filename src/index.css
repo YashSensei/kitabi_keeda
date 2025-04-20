@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 96%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 215 30% 25%;
+    --primary-foreground: 36 30% 96%;
+
+    --secondary: 36 33% 90%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 36 20% 92%;
+    --muted-foreground: 215 10% 40%;
+
+    --accent: 32 51% 64%;
+    --accent-foreground: 215 30% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 20% 87%;
+    --input: 36 20% 87%;
+    --ring: 32 51% 64%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .book-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col;
+  }
+  
+  .book-card-image {
+    @apply h-56 w-full object-cover object-center;
+  }
+  
+  .book-card-content {
+    @apply p-5 flex flex-col flex-grow;
+  }
+  
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+  
+  .book-detail-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-white shadow-md rounded-lg my-8;
+  }
+}
