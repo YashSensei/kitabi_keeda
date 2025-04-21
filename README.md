@@ -1,65 +1,85 @@
 # Kitabi Keeda
 
-## Project info
+A book discovery and management application that helps readers find, track, and organize their reading.
 
-**URL**: https://kitabi-keeda.example.com
+## About
 
-## How can I edit this code?
+Kitabi Keeda ("Book Worm" in Hindi) is a comprehensive platform for book lovers that allows you to:
 
-There are several ways of editing your application.
+- Discover new books based on your interests and preferences
+- Search for books by title, author, genre, or keywords
+- Create and manage your personal reading list
+- Track your reading progress and set reading goals
+- Rate and review books you've read
+- Connect with a community of fellow readers
+- Get personalized book recommendations
 
-**Use your preferred IDE**
+Whether you're an avid reader looking to organize your collection or someone searching for your next great read, Kitabi Keeda provides the tools to enhance your reading experience.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes.
+## Project Info
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**URL**: https://kitabi-keeda-six.vercel.app/
 
-Follow these steps:
+## How to Run This Project
+
+To run this project locally, you'll need Node.js and npm installed on your machine.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/YashSensei/kitabi_keeda.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd kitabi-keeda
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start on `http://localhost:5173/` by default.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- [Vite](https://vitejs.dev/) - Fast build tool and development server
+- [React](https://react.dev/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Reusable component library
+- [React Router](https://reactrouter.com/) - Client-side routing
+- [React Query](https://tanstack.com/query/latest) - Data fetching and state management
+- [React Hook Form](https://react-hook-form.com/) - Form handling
+- [Zod](https://zod.dev/) - Schema validation
 
-## How can I deploy this project?
+## Project Structure
 
-You can deploy this project to any hosting service of your choice such as Vercel, Netlify, or GitHub Pages.
+- `/src` - Source code
+  - `/components` - Reusable UI components
+  - `/pages` - Page components
+  - `/hooks` - Custom React hooks
+  - `/lib` - Utility functions and helpers
+  - `/styles` - Global styles
 
-## Can I connect a custom domain to my project?
+## Deployment
 
-Yes, you can!
+This project can be deployed to any hosting service that supports static sites:
 
-Most hosting providers offer custom domain configuration. Follow the instructions provided by your hosting service to connect your domain.
+1. Build the project:
+   ```sh
+   npm run build
+   ```
+
+2. The build output will be in the `dist` directory, which can be deployed to services like Vercel, Netlify, or GitHub Pages.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
