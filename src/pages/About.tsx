@@ -57,7 +57,7 @@ const About = () => {
               to="/"
               className="bg-library-accent hover:bg-library-primary text-white font-medium py-2 px-6 rounded-full inline-block transition-colors"
             >
-              Start Discovering Books
+              Start Discovering Books. 
             </Link>
           </div>
         </div>
