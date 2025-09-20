@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { setGeminiApiKey } from "../services/api";
+import { setGeminiApiKey, testGeminiApiKey } from "../services/api";
 
 type ApiKeyModalProps = {
   onSubmit: () => void;
@@ -9,8 +9,9 @@ type ApiKeyModalProps = {
 const ApiKeyModal = ({ onSubmit, onCancel }: ApiKeyModalProps) => {
   const [apiKey, setApiKey] = useState("");
   const [error, setError] = useState("");
+  const [testing, setTesting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!apiKey.trim()) {
@@ -18,7 +19,20 @@ const ApiKeyModal = ({ onSubmit, onCancel }: ApiKeyModalProps) => {
       return;
     }
     
-    setGeminiApiKey(apiKey);
+    setTesting(true);
+    setError("");
+    
+    // Test the API key first
+    const isValid = await testGeminiApiKey(apiKey.trim());
+    
+    if (!isValid) {
+      setError("Invalid API key or API is currently unavailable. Please check your key and try again.");
+      setTesting(false);
+      return;
+    }
+    
+    setGeminiApiKey(apiKey.trim());
+    setTesting(false);
     onSubmit();
   };
 
@@ -73,9 +87,10 @@ const ApiKeyModal = ({ onSubmit, onCancel }: ApiKeyModalProps) => {
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-library-accent text-white rounded-md hover:bg-library-primary"
+                disabled={testing}
+                className="px-4 py-2 bg-library-accent text-white rounded-md hover:bg-library-primary disabled:opacity-50"
               >
-                Save API Key
+                {testing ? "Testing..." : "Save API Key"}
               </button>
             </div>
           </form>
