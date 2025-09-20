@@ -34,11 +34,29 @@ cd kitabi-keeda
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env
+# Edit .env file and add your API keys
+
 # Start the development server
 npm run dev
 ```
 
 The development server will start on `http://localhost:5173/` by default.
+
+### Environment Variables
+
+This project requires API keys for full functionality. Create a `.env` file in the root directory with:
+
+```
+VITE_GOOGLE_BOOKS_API_KEY=your_google_books_api_key_here
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+- **Google Books API Key**: Required for book search functionality. Get it from [Google Cloud Console](https://console.cloud.google.com/)
+- **Gemini API Key**: Required for AI-powered book recommendations. Get it from [Google AI Studio](https://aistudio.google.com/)
+
+For Vercel deployment, add these environment variables in your Vercel dashboard under Settings > Environment Variables.
 
 ## Technologies Used
 

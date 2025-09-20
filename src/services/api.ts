@@ -3,11 +3,11 @@ import { toast } from "sonner";
 
 // API key for Google Books API
 const GOOGLE_BOOKS_API_URL = "https://www.googleapis.com/books/v1/volumes";
-const GOOGLE_BOOKS_API_KEY = "AIzaSyBvbUf-xfgG4ZpToDF5QahArFKgof-f7JE";
+const GOOGLE_BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
 // This would typically be stored in a server environment variable
 // For this demo, we'll use a placeholder that the user will need to provide
-let GEMINI_API_KEY = "AIzaSyDjqTcJq6h_fbRix1XMXNYu75vbILb6eE4";
+let GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 export const setGeminiApiKey = (key: string) => {
   GEMINI_API_KEY = key;
@@ -15,8 +15,9 @@ export const setGeminiApiKey = (key: string) => {
 };
 
 export const getGeminiApiKey = () => {
+  // First try to get from environment variable, then localStorage, then empty string
   if (!GEMINI_API_KEY) {
-    GEMINI_API_KEY = localStorage.getItem("gemini_api_key") || "";
+    GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem("gemini_api_key") || "";
   }
   return GEMINI_API_KEY;
 };
